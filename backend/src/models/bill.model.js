@@ -14,10 +14,14 @@ Bill.init({
         type: DataTypes.INTEGER,
         allowNull: false,
     },
+    service_id: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+    },
 },{
     sequelize,
-    tableName: "bill",
-    modelName: "bill",
+    tableName: "bills",
+    modelName: "Bill",
 });
 
 module.exports = Bill;

@@ -3,45 +3,42 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up (queryInterface, Sequelize) {
-    await queryInterface.createTable('user', { 
+    await queryInterface.createTable('cars', { 
       id: {
         type: Sequelize.INTEGER,
         autoIncrement: true,
         allowNull: false,
         primaryKey: true,
       },
-      firstname: {
+      model: {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      lastname: {
-        type: Sequelize.STRING,
+      mileage: {
+        type: Sequelize.INTEGER,
         allowNull: false,
       },
-      email: {
-        type: Sequelize.STRING,
-        allowNull: false,
-        unique: true,
-      },
-      password: {
-        type: Sequelize.STRING,
+      year: {
+        type: Sequelize.INTEGER,
         allowNull: false,
       },
-      address: {
-        type: Sequelize.STRING,
-        allowNull: true,
-      },
-      postalCode: {
-        type: Sequelize.STRING,
-        allowNull: true,
-      },
-      state: {
-        type: Sequelize.STRING,
-        allowNull: true
-      },
-      phoneNumber: {
-        type: Sequelize.STRING,
+      description: {
+        type: Sequelize.TEXT('long'),
         allowNull: false,
+      },
+      price: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+      },
+      brand_id: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: {
+          model: 'brands',
+          key: 'id'
+        },
+        onUpdate: 'CASCADE',
+        onDelete: 'CASCADE'
       },
       createdAt: {
         type: Sequelize.DATE
@@ -53,6 +50,6 @@ module.exports = {
   },
 
   async down (queryInterface, Sequelize) {
-    await queryInterface.dropTable('user');
+    await queryInterface.dropTable('cars');
   }
 };

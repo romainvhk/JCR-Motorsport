@@ -43,11 +43,15 @@ User.init({
         type: DataTypes.STRING,
         allowNull: false,
     },
+    accesToken: {
+        type: DataTypes.TEXT('long'),
+        allowNull: true,
+    },
 }, 
 {
     sequelize,
-    tableName: 'user',
-    modelName: 'user'
+    tableName: 'users',
+    modelName: 'User'
 });
 
 module.exports = User;

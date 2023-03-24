@@ -37,8 +37,8 @@ Car.init({
 },
 {
     sequelize,
-    tableName: "car",
-    modelName: "car",
+    tableName: "cars",
+    modelName: "Car",
 });
 
 module.exports = Car;

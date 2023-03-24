@@ -18,8 +18,8 @@ Brand.init({
 },
 {
     sequelize,
-    tableName: "brand",
-    modelName: "brand",
+    tableName: "brands",
+    modelName: "Brand",
 });
 
 module.exports = Brand;
