@@ -18,6 +18,12 @@ module.exports = {
         type: Sequelize.TEXT,
         allowNull: false,
       },
+      createdAt: {
+        type: Sequelize.DATE
+      },
+      updatedAt: {
+        type: Sequelize.DATE,
+      },
     });
 
   },

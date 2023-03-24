@@ -21,6 +21,7 @@ module.exports = {
       email: {
         type: Sequelize.STRING,
         allowNull: false,
+        unique: true,
       },
       password: {
         type: Sequelize.STRING,
@@ -41,6 +42,12 @@ module.exports = {
       phoneNumber: {
         type: Sequelize.STRING,
         allowNull: false,
+      },
+      createdAt: {
+        type: Sequelize.DATE
+      },
+      updatedAt: {
+        type: Sequelize.DATE,
       },
     });
   },
